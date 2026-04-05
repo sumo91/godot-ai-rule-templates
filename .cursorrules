@@ -1,0 +1,20 @@
+# Cursor Rules For Godot Projects
+
+- Prefer direct text edits for GDScript, JSON, docs, config files, and safe text-editable `.tscn` / `.tres` changes.
+- Do not launch Godot when the task is fully text-based and easy to review in diff form.
+- Use MCP-style Godot tools for editor launch, inspection, debug output, and automation only when the specific tool is reliable.
+- Use the standard Godot editor for inspector changes, drag-and-drop wiring, animation setup, tile editing, imports, layout work, and visual validation.
+- Use the Godot console executable for CLI diagnostics, scripts, validation, CI, and terminal-visible logs.
+- Use typed GDScript whenever practical.
+- Keep functions focused and scripts narrow in responsibility.
+- Prefer composition by default; use inheritance only when it clearly fits Godot’s scene or class model.
+- Prefer `@onready`, exported references, or explicit dependency setup over fragile deep node lookups.
+- Use clear, minimal signals for decoupled event-style communication.
+- Use `preload()` for always-needed resources and `load()` for dynamic resources.
+- Handle missing resources and invalid content data with explicit errors or safe fallbacks.
+- Keep naming consistent:
+  - files, variables, functions: `snake_case`
+  - classes: `PascalCase`
+  - constants: `ALL_CAPS_SNAKE_CASE`
+  - signals: `snake_case`
+- When work becomes editor-heavy or visual, stop at a clean handoff and record the files prepared, the editor action needed, the success criteria, and the next verification step.
